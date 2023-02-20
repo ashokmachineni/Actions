@@ -72,6 +72,9 @@ jobs:
       - id: 'auth'
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v1'
+        permissions:
+          contents: 'read'
+          id-token: 'write'
         with:
           workload_identity_provider: 'principalSet://iam.googleapis.com/projects/147543835481/locations/global/workloadIdentityPools/githubactions/*'
           service_account: 'github-action@actions-378217.iam.gserviceaccount.com'
