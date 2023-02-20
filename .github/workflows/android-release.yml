@@ -66,7 +66,7 @@ jobs:
         with:
           name: app-debug-androidTest
 
-      - name: GCP Auth
+
       - uses: 'actions/checkout@v3'
 
       - id: 'auth'
