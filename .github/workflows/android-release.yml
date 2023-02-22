@@ -81,6 +81,8 @@ jobs:
       - name: setup cloud sdk
         uses: 'google-github-actions/setup-gcloud@v1'
 
+      - name: login
+        run: 'gcloud auth login'
 
       - name: Run Instrumentation Tests in Firebase Test Lab
         run: |
