@@ -75,11 +75,12 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: 'principalSet://iam.googleapis.com/projects/147543835481/locations/global/workloadIdentityPools/githubactions/*'
-          service_account: 'github-action@actions-378217.iam.gserviceaccount.com'
+          workload_identity_provider: 'projects/818217442592/locations/global/workloadIdentityPools/action/providers/github'
+          service_account: 'firebase-adminsdk-bebis@action-e8475.iam.gserviceaccount.com'
 
-      - name: set Current project
-        run: gcloud config set project 'action-e8475'
+      - name: setup cloud sdk
+        uses: 'google-github-actions/setup-gcloud@v1'
+
 
       - name: Run Instrumentation Tests in Firebase Test Lab
         run: gcloud firebase test android run --type instrumentation --app app/build/outputs/apk/debug/app-debug.apk --test app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
