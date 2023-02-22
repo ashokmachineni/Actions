@@ -73,7 +73,7 @@ jobs:
 
 
       - name: Set up Cloud SDK
-        uses: google-github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@v1
         with:
           project_id: action-e8475
           service_account_key: ${{ secrets.FB_KEY }}
