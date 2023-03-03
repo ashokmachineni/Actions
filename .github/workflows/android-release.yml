@@ -20,9 +20,7 @@ jobs:
       - name: Run Unit Tests
         run: bash ./gradlew assembleRelease
 
+      - run: npm install  appcenter-cli
       - name: run any App Center CLI command
-        uses: joabalea/App-Center-action@v1.0.2
-        with:
-          command: appcenter distribute stores publish -s Beta -f app/build/outputs/apk/debug/app-debug.apk -r releaseNote -a user/app
-          token: ${{secrets.APP_CENTER_TOKEN}}
+        run: echo "appcenter distribute release --token "${{ secrets.APP_CENTER_TOKEN }}" --app "APPCENTER_APP" --group "APPCENTER_GROUP" --file app/build/outputs/apk/debug/app-debug.apk"
 
