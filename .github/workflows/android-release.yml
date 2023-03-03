@@ -22,5 +22,5 @@ jobs:
 
       - run: npm install  appcenter-cli
       - name: run any App Center CLI command
-        run: echo "appcenter distribute release --token "${{ secrets.APP_CENTER_TOKEN }}" --app "APPCENTER_APP" --group "APPCENTER_GROUP" --file app/build/outputs/apk/debug/app-debug.apk"
+        run: appcenter distribute release --token "${{ secrets.APP_CENTER_TOKEN }}" --app "APPCENTER_APP" --group "APPCENTER_GROUP" --file app/build/outputs/apk/debug/app-debug.apk
 
